@@ -1,6 +1,14 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const history = useHistory();
+
+    const handleLoginRoute = () => {
+
+        history.push("/dashboard/appointment");
+    };
     return (
         <nav class="navbar navbar-expand-lg navbar-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,22 +18,22 @@ const Navbar = () => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link mr-5" href="#">Home <span class="sr-only">(current)</span></a>
+                        <Link class="nav-link mr-5" to="/"><b>Home</b></Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-5" href="#">About</a>
+                        <a style={{ textDecoration: "line-through" }} class="nav-link mr-5" href="#"><b>About</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-5" href="#">Dental Services</a>
+                        <Link class="nav-link mr-5" to="/appointment"><b>Appointment</b></Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-5 text-white" href="#">Reviews</a>
+                        <a class="nav-link mr-5" href="/login"><b>Login</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-5 text-white" href="#">Blog</a>
+                        <Link class="nav-link mr-5" onClick={handleLoginRoute} href="#"><b>Dashboard</b></Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-5 text-white" href="#">Contact Us</a>
+                        <a style={{ textDecoration: "line-through" }} class="nav-link mr-5" href="#"><b>Contact Us</b></a>
                     </li>
 
                 </ul>
